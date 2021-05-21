@@ -1,8 +1,10 @@
 .todoListWrapper {
-  width: 30%;
+  width: 80%;
   background-color: #E1E7EC;
   list-style-type: none;
   padding: 0;
+  max-height: calc(100vh - 600px);
+  overflow: auto;
 }
 
 .todoListWrapper li {
