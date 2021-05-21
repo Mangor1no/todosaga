@@ -53,12 +53,6 @@ module.exports = {
         exceptions: [],
       },
     ],
-    'no-unused-vars': [
-      'error',
-      {
-        args: 'after-used',
-      },
-    ],
     'no-unused-vars': 'warn',
     'no-tabs': 'error',
     'max-lines': 'warn',
