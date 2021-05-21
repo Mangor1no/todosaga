@@ -13,8 +13,8 @@ const TodoInput = () => {
     setTodoValue('');
   };
 
-  const handleTodoInput = (todoValue) => {
-    setTodoValue(todoValue);
+  const handleTodoInput = (value) => {
+    setTodoValue(value);
   };
 
   return (

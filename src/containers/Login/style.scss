@@ -1,0 +1,125 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #e7e7e7;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-text {
+  width: 800px;
+  height: 450px;
+  background: linear-gradient(to left, #ab68ca, #de67a3);
+  top: 0;
+  box-sizing: border-box;
+  padding: 6%;
+}
+
+.text {
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.3s;
+
+  h1 {
+    margin: 0;
+  }
+
+  a, a:visited {
+      font-size: 36px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+  }
+
+  input {
+      margin-top: 30px;
+      height: 40px;
+      width: 80%;
+      border-radius: 2px;
+      border: none;
+      outline: none;
+      padding-left: 10px;
+  }
+
+  button {
+      margin-top: 60px;
+      height: 40px;
+      width: 140px;
+      outline: none;
+  }
+
+  .login-btn {
+      background: #fff;
+      border: none;
+      border-radius: 2px;
+      color: #696a86;
+      cursor: pointer;
+  }
+}
+
+.cta {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #696a86;
+  border: 2px solid #fff;
+  position: absolute;
+  bottom: -30px;
+  left: 370px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.call-text {
+  background-color: #fff;
+  width: 800px;
+  height: 450px;
+  position: absolute;
+  bottom: 0;
+  padding: 10%;
+  box-sizing: border-box;
+  text-align: center;
+
+  h1 {
+      font-size: 42px;
+      margin-top: 10%;
+      color: #696a86;
+
+      span {
+          color: #333;
+          font-weight: bolder;
+          font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+            monospace;
+      }
+  }
+
+  button {
+      height: 40px;
+      width: 180px;
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(to left, #ab68ca, #de67a3);
+      color: #fff;
+      font-weight: bolder;
+      margin-top: 30px;
+      cursor: pointer;
+      outline: none;
+  }
+}
+
+.show-hide {
+  display: block;
+}
+
+.expand {
+  transform: translateY(300px);
+}

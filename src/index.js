@@ -1,23 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import firebase from 'firebase/app';
+import { Provider } from 'react-redux';
+import { FirebaseAuthProvider, FirebaseAuthConsumer } from '@react-firebase/auth';
+import store from './data/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import firebase from 'firebase/app';
 import 'firebase/auth';
-import {
-  FirebaseAuthProvider,
-  FirebaseAuthConsumer,
-  IfFirebaseAuthed,
-  IfFirebaseAuthedAnd,
-} from '@react-firebase/auth';
+import Login from './containers/Login';
 
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './data/reducers';
-import { composeWithDevTools } from 'redux-devtools-extension';
-
-const store = createStore(rootReducer, composeWithDevTools());
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyBssaGeetvO1GW7fEjF7VEj3mmY6EmTwNI',
@@ -32,9 +24,17 @@ const firebaseConfig = {
 
 ReactDOM.render(
   <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <FirebaseAuthConsumer>
+      {({ isSignedIn }) => {
+        if (isSignedIn)
+          return (
+            <Provider store={store}>
+              <App />
+            </Provider>
+          );
+        return <Login firebase={firebase} />;
+      }}
+    </FirebaseAuthConsumer>
   </FirebaseAuthProvider>,
   document.getElementById('root')
 );

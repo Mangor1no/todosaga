@@ -16,6 +16,7 @@ const TodoList = () => {
   const renderAllTodo = () => {
     return todoList.map((element) => (
       <li
+        aria-hidden="true"
         key={element.id}
         onClick={() => toggleTodoStatus(element.id)}
         className={element.finished ? 'finishedTodo' : ''}
@@ -28,7 +29,7 @@ const TodoList = () => {
   const renderTodoInProgress = () => {
     const filteredList = todoList.filter((element) => !element.finished);
     return filteredList.map((element) => (
-      <li key={element.id} onClick={() => toggleTodoStatus(element.id)}>
+      <li key={element.id} aria-hidden="true" onClick={() => toggleTodoStatus(element.id)}>
         {element.todo}
       </li>
     ));
@@ -37,7 +38,12 @@ const TodoList = () => {
   const renderTodoFinished = () => {
     const filteredList = todoList.filter((element) => element.finished);
     return filteredList.map((element) => (
-      <li key={element.id} onClick={() => toggleTodoStatus(element.id)} className="finishedTodo">
+      <li
+        key={element.id}
+        aria-hidden="true"
+        onClick={() => toggleTodoStatus(element.id)}
+        className="finishedTodo"
+      >
         {element.todo}
       </li>
     ));

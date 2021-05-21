@@ -20,7 +20,7 @@ const todos = (state = [...initialState], action) => {
       );
     }
     case actionTypes.REMOVE_TODO_FINISHED: {
-      break;
+      return null;
     }
     default:
       return state;
