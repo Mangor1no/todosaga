@@ -56,7 +56,6 @@ module.exports = {
       },
     ],
     'no-unused-vars': 'warn',
-    '@typescript-eslint/no-unused-vars': ['warn'],
     'no-tabs': 'error',
     'max-lines': 'warn',
     'symbol-description': 'off',
