@@ -6,7 +6,6 @@ import './style.css';
 
 const TodoList = () => {
   const todoList = useSelector((state) => state.todos);
-
   const todoFilter = useSelector((state) => state.todoFilter);
   const dispatch = useDispatch();
 
