@@ -37,6 +37,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json', '.native.js'],
       },
     ],
+    'react/react-in-jsx-scope': 'off',
     'prettier/prettier': ['error', prettier],
     'no-irregular-whitespace': 'error',
     'import/no-extraneous-dependencies': 'off',
