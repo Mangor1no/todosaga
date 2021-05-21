@@ -12,6 +12,7 @@ module.exports = {
   globals: {
     __DEV__: true,
   },
+  extends: ['plugin:react/recommended'],
   plugins: ['react', 'prettier'],
   parserOptions: {
     ecmaFeatures: {
