@@ -1,30 +1,33 @@
 /* eslint-disable no-undef */
-import * as actionTypes from './actionTypes';
+import {
+  ADD_TODO,
+  CHANGE_TODO_STATUS,
+  FILTER_TODO,
+  LOGIN_FAILURE,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+} from './actionTypes';
 
 const todoID = 0;
-
-export const addTodo = (todo) => ({
-  type: actionTypes.ADD_TODO,
-  id: todoID + 1,
-  todo,
-});
-
-export const filterTodo = (filter) => ({
-  type: actionTypes.FILTER_TODO,
-  filter,
-});
-
-export const changeTodoStatus = (id) => ({
-  type: actionTypes.CHANGE_TODO_STATUS,
-  id,
-});
 
 function action(type, payload = {}) {
   return { type, ...payload };
 }
 
-export const userLogin = {
-  request: (login) => action(actionTypes.LOGIN[REQUEST], { login }),
-  success: (login, response) => action(actionTypes.LOGIN[SUCCESS], { login, response }),
-  failure: (login, error) => action(actionTypes.LOGIN[FAILURE], { login, error }),
+export const addTodo = (todo) => action(ADD_TODO, { id: todoID + 1, todo });
+
+export const filterTodo = (filter) => action(FILTER_TODO, filter);
+
+export const changeTodoStatus = (id) => action(CHANGE_TODO_STATUS, id);
+
+export const loginRequest = (firebase, email, password) => {
+  return action(LOGIN_REQUEST, { firebase, email, password });
+};
+
+export const loginSuccess = (payload) => {
+  return action(LOGIN_REQUEST, payload);
+};
+
+export const loginFailure = (error) => {
+  return action(LOGIN_REQUEST, error);
 };

@@ -22,20 +22,29 @@ const firebaseConfig = {
   measurementId: 'G-MRSWGVXP5S',
 };
 
+firebase.initializeApp(firebaseConfig);
+
+// ReactDOM.render(
+//   <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
+//     <FirebaseAuthConsumer>
+//       {({ isSignedIn }) => {
+//         if (isSignedIn)
+//           return (
+//             <Provider store={store}>
+//               <App />
+//             </Provider>
+//           );
+//         return <Login firebase={firebase} />;
+//       }}
+//     </FirebaseAuthConsumer>
+//   </FirebaseAuthProvider>,
+//   document.getElementById('root')
+// );
+
 ReactDOM.render(
-  <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
-    <FirebaseAuthConsumer>
-      {({ isSignedIn }) => {
-        if (isSignedIn)
-          return (
-            <Provider store={store}>
-              <App />
-            </Provider>
-          );
-        return <Login firebase={firebase} />;
-      }}
-    </FirebaseAuthConsumer>
-  </FirebaseAuthProvider>,
+  <Provider store={store}>
+    <Login firebase={firebase} />
+  </Provider>,
   document.getElementById('root')
 );
 

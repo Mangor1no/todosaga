@@ -1,18 +1,18 @@
 import React, { useCallback, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginRequest } from '../../data/actions';
 import './style.scss';
 
 const Login = ({ firebase }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const dispatch = useDispatch();
+
   const handleLogin = useCallback(
-    async (event) => {
+    (event) => {
       event.preventDefault();
-      try {
-        await firebase.auth().signInWithEmailAndPassword(email, password);
-      } catch (error) {
-        alert(error);
-      }
+      dispatch(loginRequest(firebase, email, password));
     },
     [email, password, firebase]
   );

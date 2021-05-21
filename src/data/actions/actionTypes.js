@@ -1,7 +1,3 @@
-const REQUEST = 'REQUEST';
-const SUCCESS = 'SUCCESS';
-const FAILURE = 'FAILURE';
-
 export const ADD_TODO = 'ADD_TODO';
 
 export const REMOVE_TODO_FINISHED = 'REMOVE_TODO_FINISHED';
@@ -13,12 +9,10 @@ export const FILTER_TODO_ALL = 'FILTER_TODO_ALL';
 export const FILTER_TODO_ACTIVE = 'FILTER_TODO_ACTIVE';
 export const FILTER_TODO_FINISHED = 'FILTER_TODO_FINISHED';
 
-function createRequestTypes(base) {
-  return [REQUEST, SUCCESS, FAILURE].reduce((acc, type) => {
-    acc[type] = `${base}_${type}`;
-    return acc;
-  }, {});
-}
+export const LOGIN_REQUEST = 'auth:LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'auth:LOGIN_SUCCESS';
+export const LOGIN_FAILURE = 'auth:LOGIN_FAILURE';
 
-export const LOGIN = createRequestTypes('LOGIN');
-export const LOGOUT = createRequestTypes('LOGOUT');
+export const LOGOUT_REQUEST = 'auth:LOGOUT_REQUEST';
+export const LOGOUT_SUCCESS = 'auth:LOGOUT_SUCCESS';
+export const LOGOUT_FAILURE = 'auth:LOGOUT_FAILURE';
