@@ -1,4 +1,4 @@
-const prettier = require('./.prettierrc.js');
+const prettier = require('./.prettierrc');
 
 module.exports = {
   root: true,
@@ -65,6 +65,6 @@ module.exports = {
     'import/order': 'warn',
     'import/no-named-as-default': 'warn',
     'react/jsx-props-no-spreading': 'warn',
-    'react/react-in-jsx-scope': 'warn',
+    'react/react-in-jsx-scope': 'off',
   },
 };

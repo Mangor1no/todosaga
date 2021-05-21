@@ -14,7 +14,7 @@ const Login = ({ firebase }) => {
       event.preventDefault();
       dispatch(loginRequest(firebase, email, password));
     },
-    [email, password, firebase]
+    [email, password, firebase, dispatch]
   );
 
   return (

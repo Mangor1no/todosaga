@@ -1,15 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import firebase from 'firebase';
+import { useSelector } from 'react-redux';
+import Login from './containers/Login';
 import Todo from './containers/Todo';
 
-function App() {
-  const firebaseApp = firebase.apps[0];
-  return (
-    <div className="todoWrapper">
-      <Todo />
-    </div>
-  );
+function App({ firebase }) {
+  const isAuth = useSelector((state) => !!state.auth.user);
+
+  console.log(`isAuth`, isAuth);
+
+  if (isAuth)
+    return (
+      <div className="todoWrapper">
+        <Todo />
+      </div>
+    );
+  return <Login firebase={firebase} />;
 }
 
 export default App;

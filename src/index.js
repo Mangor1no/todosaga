@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import firebase from 'firebase/app';
 import { Provider } from 'react-redux';
-import { FirebaseAuthProvider, FirebaseAuthConsumer } from '@react-firebase/auth';
 import store from './data/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -24,26 +23,9 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// ReactDOM.render(
-//   <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
-//     <FirebaseAuthConsumer>
-//       {({ isSignedIn }) => {
-//         if (isSignedIn)
-//           return (
-//             <Provider store={store}>
-//               <App />
-//             </Provider>
-//           );
-//         return <Login firebase={firebase} />;
-//       }}
-//     </FirebaseAuthConsumer>
-//   </FirebaseAuthProvider>,
-//   document.getElementById('root')
-// );
-
 ReactDOM.render(
   <Provider store={store}>
-    <Login firebase={firebase} />
+    <App firebase={firebase} />
   </Provider>,
   document.getElementById('root')
 );
